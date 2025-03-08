@@ -37,7 +37,6 @@ def login():
         if user and bcrypt.check_password_hash(user["password"], password):
             return jsonify({
                 "message": "Login successful",
-                "user_type": user.get("user_type", "student"),  # Default to student
                 "username": username,
                 "fullname": user.get("fullname", username)
             }), 200
